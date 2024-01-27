@@ -58,3 +58,38 @@ If you have any questions, feel free to contact us! Any feedback on this exercis
 - `docker build -t autocompany .`
 - ` docker run -p 80:80 -d autocompany`
 - Navigate to `http://127.0.0.1/`
+
+Top User stories in the Backlog
+As a company, I want all my products in a database, so I can offer them via our new platform to customers
+
+1. **As a company, I want all my products in a database, so I can offer them via our new platform to customers.**
+
+   - API Endpoint: `http://127.0.0.1:8000/api/products/`
+     - Handles working with the entire product catalog.
+     - `GET`: Retrieve a single product.
+     - `POST`: Add a single product.
+     - `DELETE`: Delete a single product.
+
+2. **As a client, I want to add a product to my shopping cart, so I can order it at a later stage.**
+
+   - API Endpoint: `http://127.0.0.1:8000/api/shoppingCart/<product ID here>/`
+     - `GET`: Retrieve the contents of the shopping cart.
+     - `POST`: Add a product to the shopping cart.
+     - `DELETE`: Delete a product from the shopping cart.
+
+3. **As a client, I want to remove a product from my shopping cart, so I can tailor the order to what I actually need.**
+
+   - API Endpoint: `http://127.0.0.1:8000/api/shoppingCart/<product ID here>/`
+     - `GET`: Retrieve the contents of the shopping cart.
+     - `POST`: Add a product to the shopping cart.
+     - `DELETE`: Remove a product from the shopping cart.
+
+4. **As a client, I want to see an overview of all the products, so I can choose which product I want.**
+
+   - API Endpoint: `http://127.0.0.1:8000/api/products/`
+     - `GET`: Retrieve the entire product catalog.
+
+5. **As a client, I want to view the details of a product, so I can see if the product satisfies my needs.**
+   - API Endpoint: `http://127.0.0.1:8000/api/product/<product ID here>/`
+     - Handles working with a single product.
+     - `GET`: Retrieve detailed information about a specific product.
