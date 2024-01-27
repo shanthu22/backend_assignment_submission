@@ -3,12 +3,13 @@ from rest_framework.response import Response
 from rest_framework import status
 from shoppingCarts.models import ShoppingCart
 from shoppingCarts.process.shoppingCartProcess import handleGETMethod, handlePostMethod, handleDeleteMethod
-
+from rest_framework.pagination import PageNumberPagination
 allowedMethods = ['GET', 'POST', 'PUT', 'DELETE']
 
 
 @api_view(allowedMethods)
 def shoppingCart(request, RequestedUserID):
+    pagination_class = PageNumberPagination
 
     # GET Method
     if request.method == 'GET':
