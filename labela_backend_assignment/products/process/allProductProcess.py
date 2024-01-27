@@ -15,16 +15,16 @@ def HandleGetAllProcess(data):
     if not fetchedData.exists():
         return ({'message': 'Products not found'}, status.HTTP_404_NOT_FOUND)
 
-    return ({'message': 'Successfully retrieved all person data',  'data': serializer.data}, status.HTTP_200_OK)
+    return ({'message': 'Successfully retrieved all person data',  'data': serializer.data})
 
 
 def HandlePostAllProcess():
-    return 'HandlePostProcess called'
+    return {'message': 'This Feature is not implemented at the moment  '}
 
 
 def HandlePutAllProcess():
-    return 'HandlePutProcess called'
+    return ({'message': 'This Feature is not implemented at the moment  '}, status.HTTP_200_OK)
 
 
 def HandleDeleteAllProcess():
-    return 'HandleDeleteProcess called'
+    return ({'message': 'This Feature is not implemented at the moment  '}, status.HTTP_200_OK)

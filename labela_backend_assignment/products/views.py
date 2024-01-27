@@ -6,6 +6,14 @@ from products.process.allProductProcess import HandleGetAllProcess, HandlePostAl
 from rest_framework.pagination import PageNumberPagination
 allowedHttpMethods = ['GET', 'POST', 'PUT', 'DELETE']
 
+# This class defines the pagination settings
+
+
+class CustomPageNumberPagination(PageNumberPagination):
+    page_size = 3  # Set the desired page size
+    page_size_query_param = 'page_size'
+    max_page_size = 10
+
 
 class CustomPageNumberPagination(PageNumberPagination):
     page_size = 3  # Default page size
@@ -23,6 +31,7 @@ def HandleProductsRequest(request, *callback_args, **callback_kwargs):
     if request.method == 'GET':
         inputData['id'] = productID
         output = HandleGetProcess(inputData)
+        # page = self.pagination_class()
         return Response(output)
 
     elif request.method == 'POST':
@@ -46,6 +55,8 @@ def HandleProductsRequest(request, *callback_args, **callback_kwargs):
 
 
 @api_view(allowedHttpMethods)
+# This method fetches the products data as a whole, Http Methods and calls the appropriate function from allProductProcess.py
+# Params:HTTP Request, *callback_args, **callback_kwargs
 def HandleAllProductsRequest(request, *callback_args, **callback_kwargs):
     inputData = {}
     productID = callback_kwargs.get('productID')
