@@ -131,3 +131,7 @@ dmypy.json
 .idea/
 
 junit.xml
+
+
+#Docker restart Automation
+dockerAuto.sh
