@@ -15,7 +15,9 @@ def HandleGetAllProcess(data):
     if not fetchedData.exists():
         return ({'message': 'Products not found'}, status.HTTP_404_NOT_FOUND)
 
+    # return ({'message': 'Successfully retrieved all person data',  'data': serializer.data})
     return ({'message': 'Successfully retrieved all person data',  'data': serializer.data})
+    # return {'message': 'Successfully retrieved all person data', 'data': serializer.data}, status.HTTP_200_OK
 
 
 def HandlePostAllProcess():
