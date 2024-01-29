@@ -27,8 +27,14 @@ def HandlePostProcess(inputData):
     return ({"message": "Successfully added the product data", "data": inputData}, status.HTTP_200_OK)
 
 
-def HandlePutProcess():
-    return "HandlePutProcess called"
+def HandlePutProcess(inputData):
+    productObj = Product.objects.get(id=inputData['id'])
+    serializer = ProductsSerializer(productObj, data=inputData)
+    if not serializer.is_valid():
+        raise Exception(serializer.errors)
+
+    serializer.save()
+    return ({"message": "Successfully added the product data", "data": inputData}, status.HTTP_200_OK)
 
 
 def HandleDeleteProcess(inputData):

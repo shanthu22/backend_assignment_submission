@@ -44,7 +44,8 @@ def HandleProductsRequest(request, *callback_args, **callback_kwargs):
         output = HandlePutProcess(inputData)
         return Response(output)
     elif request.method == 'DELETE':
-        inputData = request.data
+        # inputData = request.data
+        inputData['id'] = productID
         output = HandleDeleteProcess(inputData)
         return Response(output)
 
