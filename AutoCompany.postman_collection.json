@@ -92,10 +92,31 @@
 				{
 					"name": "New Request",
 					"request": {
-						"method": "GET",
+						"method": "PUT",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n                \"id\": 1,\r\n                \"name\": \"corolla motor new \",\r\n                \"description\": \"Used in car\",\r\n                \"price\": \"15.00\",\r\n                \"quantity\": 10\r\n            }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": ""
+							"raw": "http://127.0.0.1/api/product/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"path": [
+								"api",
+								"product",
+								""
+							]
 						}
 					},
 					"response": []
@@ -139,7 +160,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://127.0.0.1/api/shoppingCart/4/",
+							"raw": "http://127.0.0.1/api/shoppingCart/1/",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -150,7 +171,7 @@
 							"path": [
 								"api",
 								"shoppingCart",
-								"4",
+								"1",
 								""
 							]
 						}
@@ -205,7 +226,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://127.0.0.1:8000/api/shoppingCart/1/",
+							"raw": "http://127.0.0.1/api/products/1/",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -213,10 +234,9 @@
 								"0",
 								"1"
 							],
-							"port": "8000",
 							"path": [
 								"api",
-								"shoppingCart",
+								"products",
 								"1",
 								""
 							]
