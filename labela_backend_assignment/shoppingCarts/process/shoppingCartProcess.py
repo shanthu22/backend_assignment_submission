@@ -1,5 +1,4 @@
 from users.models import User
-from carParts.models import CarPart
 from shoppingCarts.serializer import ShoppingCartsSerializer
 from shoppingCarts.models import ShoppingCart
 from django.shortcuts import get_object_or_404

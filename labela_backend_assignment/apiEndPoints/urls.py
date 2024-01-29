@@ -1,7 +1,6 @@
 from django.contrib import admin
 from django.urls import path
 from shoppingCarts.views import shoppingCart
-from carParts.views import carParts  # ,tempcarParts
 from products.views import HandleProductsRequest, HandleAllProductsRequest
 
 urlpatterns = [
