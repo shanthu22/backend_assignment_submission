@@ -31,7 +31,6 @@ def HandleProductsRequest(request, *callback_args, **callback_kwargs):
     if request.method == 'GET':
         inputData['id'] = productID
         output = HandleGetProcess(inputData)
-        # page = self.pagination_class()
         return Response(output)
 
     elif request.method == 'POST':
@@ -44,7 +43,6 @@ def HandleProductsRequest(request, *callback_args, **callback_kwargs):
         output = HandlePutProcess(inputData)
         return Response(output)
     elif request.method == 'DELETE':
-        # inputData = request.data
         inputData['id'] = productID
         output = HandleDeleteProcess(inputData)
         return Response(output)
@@ -59,9 +57,7 @@ def HandleProductsRequest(request, *callback_args, **callback_kwargs):
 # This method fetches the products data as a whole, Http Methods and calls the appropriate function from allProductProcess.py
 # Params:HTTP Request, *callback_args, **callback_kwargs
 def HandleAllProductsRequest(request, *callback_args, **callback_kwargs):
-    print("+++++++++++++++++++++++++++++++++++")
-    print("Im called")
-    print("+++++++++++++++++++++++++++++++++++")
+
     inputData = {}
     productID = callback_kwargs.get('productID')
     if productID is not None:
