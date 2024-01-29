@@ -15,6 +15,9 @@ RUN pip install --no-cache-dir flake8==3.8.4 uWSGI
 COPY requirements.txt /app/
 RUN pip install --no-cache-dir -r requirements.txt
 
+# Update setup Tools 
+RUN pip install --upgrade setuptools
+
 # Copy our codebase into the container
 COPY . .
 
